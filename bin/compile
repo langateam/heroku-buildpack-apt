@@ -46,7 +46,6 @@ function indent() {
 
 apt-get $APT_OPTIONS update -qq | indent
 apt-get $APT_OPTIONS -y --force-yes -d install --reinstall software-properties-common | indent
-dpkg -x $DEB $BUILD_DIR/.apt/
 
 topic "Adding source repositories..."
 for PACKAGE in $(cat $APT_PACKAGES); do
