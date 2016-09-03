@@ -45,7 +45,7 @@ function indent() {
 }
 
 apt-get $APT_OPTIONS update -qq | indent
-apt-get $APT_OPTIONS -y --force-yes -d install --reinstall software-properties-common | indent
+apt-get $APT_OPTIONS -y --force-yes install --reinstall software-properties-common | indent
 
 topic "Adding source repositories..."
 for PACKAGE in $(cat $APT_PACKAGES); do
