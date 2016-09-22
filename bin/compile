@@ -48,7 +48,6 @@ topic "Setting up apt repositories..."
 cat /etc/apt/sources.list >> $APT_SOURCES
 apt-get $APT_OPTIONS update -qq | indent
 apt-get $APT_OPTIONS -y --force-yes upgrade | indent
-apt-get $APT_OPTIONS -y --force-yes dist-upgrade | indent
 
 topic "Downloading packages..."
 for PACKAGE in $(cat $APT_PACKAGES); do
