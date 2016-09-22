@@ -65,6 +65,9 @@ for PACKAGE in $(cat $APT_PACKAGES); do
   fi
 done
 
+topic "Removing superfluous language packages (to save space)..."
+rm -rf $APT_CACHE_DIR/archives/language-pack*
+
 topic "Installing packages..."
 for DEB in $(ls -1 $APT_CACHE_DIR/archives/*.deb); do
   topic "Installing $(basename $DEB)"
